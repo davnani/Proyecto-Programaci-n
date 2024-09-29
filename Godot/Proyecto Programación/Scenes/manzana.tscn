@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://vgmfpdniwhvk"]
+
+[ext_resource type="Texture2D" uid="uid://jxj5rk8mcg47" path="res://icon.svg" id="1_7rxvd"]
+[ext_resource type="Script" path="res://Scripts/manzana.gd" id="1_plswx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia8ob"]
+size = Vector2(24, 20)
+
+[node name="Manzana" type="CharacterBody2D"]
+disable_mode = 2
+script = ExtResource("1_plswx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.91245, 0, 0.00266558, 1)
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_7rxvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ia8ob")
+one_way_collision = true

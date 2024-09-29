@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw4xdgoefpptc"]
+
+[ext_resource type="PackedScene" uid="uid://bvpfnlr06m4pj" path="res://Scenes/suelo.tscn" id="1_bth80"]
+[ext_resource type="PackedScene" uid="uid://bmgn2esvjpxh7" path="res://Scenes/player.tscn" id="2_4moy3"]
+[ext_resource type="PackedScene" uid="uid://c46rdupj8158e" path="res://Scenes/generador.tscn" id="3_y85k4"]
+[ext_resource type="Script" path="res://Scripts/contador.gd" id="4_xn72w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c54j"]
+size = Vector2(60, 598)
+
+[node name="Escena" type="Node2D"]
+
+[node name="Suelo" parent="." instance=ExtResource("1_bth80")]
+position = Vector2(561, 618)
+
+[node name="Player" parent="." instance=ExtResource("2_4moy3")]
+position = Vector2(494, 280)
+
+[node name="Generador" parent="." instance=ExtResource("3_y85k4")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 49.0
+offset_top = 42.0
+offset_right = 133.0
+offset_bottom = 108.0
+script = ExtResource("4_xn72w")
+
+[node name="barreras" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barreras"]
+position = Vector2(-64, 298)
+shape = SubResource("RectangleShape2D_0c54j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="barreras"]
+position = Vector2(1216, 298)
+shape = SubResource("RectangleShape2D_0c54j")
